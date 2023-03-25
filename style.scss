@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+  transition: 0.5s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #252525;
+
+  .header {
+    justify-content: space-between;
+    width: 50%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    &__info {
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      align-items: center;
+      &__settings {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 40px;
+        border-radius: 20px;
+        padding-left: 5px;
+        margin-right: 10px;
+        transition: 0.7s;
+        max-width: 37px;
+        overflow: hidden;
+        &:hover {
+          max-width: 1000px;
+          background-color: #fff;
+        }
+        img {
+          &:last-child {
+            transition: 0.5s;
+            padding: 7px;
+            margin-right: 0;
+            &:hover {
+              transform: rotate(0.1turn);
+            }
+          }
+          margin-right: 10px;
+          width: 25px;
+          padding: 5px;
+          border-radius: 50%;
+          background-color: #83e1ff;
+          transition: 0.5s;
+          cursor: pointer;
+          &:hover {
+            background-color: darken(#83e1ff, 10%)
+          }
+        }
+      }
+      button {
+        width: 190px;
+        height: 40px;
+        font-size: 16px;
+        background-color: #ffad52;
+        &:hover {
+          background-color: darken(#ffad52, 10%);
+        }
+      }
+    }
+  }
+
+  .workspace {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      &__noTask {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          font-weight: 700;
+          font-size: 36px;
+          color: white;
+        }
+      }
+      &__tasks {
+        width: 100%;
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+
+        &__title {
+          font-size: 25px;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+
+        &__task {
+          display: flex;
+          flex-direction: column;
+
+          &__text {
+            font-size: 20px;
+            margin-bottom: 15px;
+          }
+
+          &__status {
+            font-size: 16px;
+            margin-bottom: 5px;
+          }
+
+          &__date {
+            font-size: 18px;
+          }
+
+          &__activity {
+            display: flex;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: space-between;
+            &__date {
+
+            }
+            img {
+              border-radius: 25%;
+              padding: 5px;
+              width: 30px;
+              cursor: pointer;
+              margin-right: 10px;
+            }
+            .done {
+              background-color: #ffad52;
+              &:hover {
+                background-color: darken(#ffad52, 10%);
+              }
+            }
+            .edit {
+              background-color: #e5e5e5;
+              &:hover {
+                background-color: darken(#e5e5e5, 10%);
+              }
+            }
+            .delete {
+              background-color: #ff7878;
+              &:hover {
+                background-color: darken(#ff5252, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .modal-edit {
+    &.hidden {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    &__task-edit {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 15px;
+
+      p {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      &__form {
+        &__data {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          input {
+            margin-top: 3px;
+            width: 400px;
+            height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #989898;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      button {
+        width: 250px;
+        height: 40px;
+        margin-top: 15px;
+        font-size: 15px;
+        background-color: #ffad52;
+        &:hover {
+          background-color: darken(#ffad52, 10%);
+        }
+      }
+    }
+  }
+
+  .modal-create {
+    &.hidden {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    &__task-create {
+      width: 450px;
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 15px;
+      p {
+        font-weight: 600;
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      &__form {
+        &__data {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          input {
+            margin-top: 3px;
+            width: 400px;
+            height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #989898;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      button {
+        width: 190px;
+        height: 40px;
+        margin-top: 15px;
+        font-size: 15px;
+        background-color: #ffad52;
+        &:hover {
+          background-color: darken(#ffad52, 10%);
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

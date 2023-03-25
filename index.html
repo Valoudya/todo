@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+    <div class="header__info">
+        <a href="">ToDo для твоих задач</a>
+    </div>
+    <div class="header__menu">
+        <div class="header__menu__settings">
+            <img src="img/calendar.png" alt="" class="settings-date">
+            <img src="img/check-mark(1).png" alt="" class="settings-done">
+            <img src="img/free-icon-settings-3991302.png" alt="" class="settings">
+        </div>
+        <button class="newTask">Создать задачу</button>
+    </div>
+</div>
+<div class="workspace">
+    <div class="workspace__content"></div>
+</div>
+<div class="modal-edit hidden">
+    <div class="modal-edit__task-edit">
+        <p>Редактировать задачу</p>
+        <div class="modal-edit__task-edit__form">
+            <div class="modal-edit__task-edit__form__data">
+                Введите заголовок <input type="text" name="title" class="input-title-edit">
+            </div>
+            <div class="modal-edit__task-edit__form__data">
+                Введите текст задачи <input type="text" name="text" class="input-text-edit">
+            </div>
+            <div class="modal-edit__task-edit__form__data">
+                Введите дату выполнения задачи <input type="date" name="date" class="input-date-edit">
+            </div>
+            <button class="taskEdit">Редактировать задачу</button>
+        </div>
+    </div>
+</div>
+<div class="modal-create hidden">
+    <div class="modal-create__task-create">
+        <p>Новая задача</p>
+        <div class="modal-create__task-create__form">
+            <div class="modal-create__task-create__form__data">
+                Введите заголовок: <input type="text" name="title" class="input-title">
+            </div>
+            <div class="modal-create__task-create__form__data">
+                Введите текст задачи: <input type="text" name="text" class="input-text">
+            </div>
+            <div class="modal-create__task-create__form__data">
+                Введите дату выполнения задачи: <input type="date" name="date" class="input-date">
+            </div>
+            <button class="createTask">Создать задачу</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
