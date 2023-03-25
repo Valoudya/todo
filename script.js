@@ -161,8 +161,12 @@ function arraySort(fieId) {
 function filter(array) {
     if (filterTask == 'filterDone') {
         array = array.sort(arraySort('status'))
+        $('.settings-done').classList.add('chosen')
+        $('.settings-date').classList.remove('chosen')
     } else if (filterTask == 'filterTime') {
         array = array.sort(arraySort('deathLineDate'))
+        $('.settings-date').classList.add('chosen')
+        $('.settings-done').classList.remove('chosen')
     }
 }
 

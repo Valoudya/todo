@@ -52,8 +52,19 @@ body {
           max-width: 1000px;
           background-color: #fff;
         }
+        .settings-done {
+          &.chosen {
+            background-color: darken(#83e1ff, 30%);
+          }
+        }
+        .settings-date {
+          &.chosen {
+            background-color: darken(#83e1ff, 30%);
+          }
+        }
         img {
           &:last-child {
+            background-color: #83e1ff;
             transition: 0.5s;
             padding: 7px;
             margin-right: 0;
@@ -65,7 +76,6 @@ body {
           width: 25px;
           padding: 5px;
           border-radius: 50%;
-          background-color: #83e1ff;
           transition: 0.5s;
           cursor: pointer;
           &:hover {
